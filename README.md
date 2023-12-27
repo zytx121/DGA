@@ -4,7 +4,9 @@ This is the official repository for “DGA”.
 
 ## SJTU-4K Dataset
 
-The SJTU-4K [GoogleDrive](https://github.com/VisDrone/DroneVehicle) dataset is available now.  
+The dataset is available now.  
+
+[GoogleDrive](https://github.com/VisDrone/DroneVehicle)
 
 ## Code
 
