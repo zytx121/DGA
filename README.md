@@ -13,20 +13,68 @@ mmrotate == 1.0.0rc1
 
 ## Install
 
-- 安装 mmrotate
-- 将 camors 文件夹移动到 `mmrotate/projects/` 目录下即可
+- Install mmrotate
+- Move the camors folder to the `mmrotate/projects/` directory.
 
 
-## Physical Adversarial Attack（物理攻击）
+## Digital Adversarial Attack
 
-往往通过贴纸、补丁等方式对神经网络进行攻击，补丁与贴纸的颜色并不要求与背景类似，但是贴纸的面积不宜过大，扰动的特点是“范围窄、扰动大”。
+The objective is to make adversarial attack samples absolutely similar to the original images, with minimal pixel-level differences from the source image, while requiring perturbations that are characterized by wide-ranging yet subtle disturbances.
+
+Plan of Models:
+
+- :heavy_check_mark: FGSM (2014)
+- :heavy_check_mark: BIM (2016)
+- :heavy_check_mark: PGD (2017)
+- :heavy_check_mark: MIFGSM (2017)
+- :heavy_check_mark: VMIFGSM (CVPR'2021)
+- :clock3: [TPA](https://github.com/plpl2019/TPA) (TGRS'2023)
+- :clock3: [UEA](https://github.com/LiangSiyuan21/Adversarial-Attacks-for-Image-and-Video-Object-Detection/tree/master/img_attack_with_attention) (IJCAI'2019)
+- :heavy_plus_sign: [DAG](https://arxiv.org/abs/1703.08603v2) (2017)
+- :heavy_plus_sign: [BAA](https://ieeexplore.ieee.org/document/9522031) (2021)
+- :heavy_plus_sign: [RPAttack](https://github.com/VDIGPKU/RPAttack) (ICME'2021)
+
+Execute the PGD digital attack on a single image and generate an adversarial sample
+```bash
+python projects/camors/camors/digital_attack.py \
+    data/DOTA/split_ss_dota/val/images/P0170__1024__824___57.png \
+    projects/camors/configs/vfnet_r50_fpn_1x_dota_airplane.py \
+    --weights work_dirs/vfnet_r50_fpn_1x_dota_airplane/epoch_12.pth \
+    --out-dir /public/zhouyue/outputs \
+    --attack-method PGD
+```
+
+Perform the PGD digital attack on a single image and visualize the detection results post-attack
+```bash
+python projects/camors/camors/digital_attack.py \
+    data/DOTA/split_ss_dota/val/images/P0170__1024__824___57.png \
+    projects/camors/configs/vfnet_r50_fpn_1x_dota_airplane.py \
+    --weights work_dirs/vfnet_r50_fpn_1x_dota_airplane/epoch_12.pth \
+    --out-dir /public/zhouyue/outputs \
+    --attack-method PGD \
+    --draw-pred
+```
+
+Perform the PGD digital attack on the dataset and generate adversarial samples
+```bash
+python projects/camors/camors/digital_attack.py \
+    data/DOTA/split_ss_dota/val/images/ \
+    projects/camors/configs/vfnet_r50_fpn_1x_dota_airplane.py \
+    --weights work_dirs/vfnet_r50_fpn_1x_dota_airplane/epoch_12.pth \
+    --out-dir /public/zhouyue/outputs \
+    --attack-method PGD
+```
+
+## Physical Adversarial Attack
+
+Attacks on neural networks are often conducted through the use of stickers or patches, where the color of the patches or stickers does not need to resemble the background. However, the area covered by the stickers should not be too large, with the perturbation characterized by narrow scope and significant disturbance.
 
 Plan of Models:
 
 - :heavy_check_mark: [DPatch](https://github.com/veralauee/DPatch) (AAAIW'2019)
 - :heavy_check_mark: [OBJ](https://gitlab.com/EAVISE/adversarial-yolo) (2019)
 - :heavy_check_mark: [APPA](https://ieeexplore.ieee.org/abstract/document/9965436) (TGRS'2022)
-- :heavy_check_mark: [DGA](https://ieeexplore.ieee.org/abstract/document/) (TGRS'2024)
+- :clock3: [DGA](https://ieeexplore.ieee.org/abstract/document/) (TGRS'2024)
 - :clock3: [Patch-Noobj](https://www.mdpi.com/2072-4292/13/20/4078) (RS'2021)
 - :clock3: [APA](https://www.mdpi.com/2072-4292/14/21/5298) (RS'2022)
 - :heavy_plus_sign: [APC](https://repository.uantwerpen.be/docman/irua/16bd0a/p177670.pdf)  (2020)
@@ -35,14 +83,12 @@ Plan of Models:
 - :heavy_plus_sign: [SOPP](https://github.com/shighghyujie/newpatch-rl) (TPAMI'2022)
 - :heavy_plus_sign: [Adversarial Defense in Aerial Detection](https://robustart.github.io/long_paper/08.pdf)
 
-训练 OBJ 模型
-
+Training the OBJ model
 ```bash
 python tools/train.py projects/camors/configs/rtmdet_tiny_1x_dota_obj_airplane.py
 ```
 
-测试并生成对抗样本
-
+Test and generate adversarial examples
 ```bash
 python tools/test.py projects/camors/configs/rtmdet_tiny_1x_dota_obj_airplane.py \
     /home/zytx121/mmrotate/work_dirs/rtmdet_tiny_3x_dota_airplane/epoch_36.pth
@@ -62,7 +108,7 @@ The dataset is available now.
 
 [GoogleDrive](https://drive.google.com/drive/folders/1LWXC-a7OM2kGbXeCp-frrMcBOFD127Hb?usp=sharing)
 
-[jbox](https://jbox.sjtu.edu.cn/l/j1vS3y)(提取码：jlfr)
+[jbox](https://jbox.sjtu.edu.cn/l/j1vS3y)(Code：jlfr)
 
 ## Reference
 
@@ -73,7 +119,7 @@ The dataset is available now.
 
 ## Citation
 
-If you use DGA method for attacks in your research, please consider citing
+If you use this project for attacks in your research, please consider citing
 
 ```
 @article{zhou2024dga,
@@ -85,5 +131,15 @@ If you use DGA method for attacks in your research, please consider citing
   year={2024},
   publisher={IEEE}
 }
+
+@article{zhou2023camonet,
+  title={CamoNet: A Target Camouflage Network for Remote Sensing Images Based on Adversarial Attack},
+  author={Zhou, Yue and Jiang, Wanghan and Jiang, Xue and Chen, Lin and Liu, Xingzhao},
+  journal={Remote Sensing},
+  volume={15},
+  year={2023},
+  number={21}
+}
+
 ```
 
