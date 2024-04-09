@@ -267,12 +267,12 @@ class BaseDenseHead(BaseModule, metaclass=ABCMeta):
         for img_id in range(len(batch_img_metas)):
             img_meta = batch_img_metas[img_id]
             cls_score_list = select_single_mlvl(
-                cls_scores, img_id, detach=True)
+                cls_scores, img_id, detach=False)
             bbox_pred_list = select_single_mlvl(
-                bbox_preds, img_id, detach=True)
+                bbox_preds, img_id, detach=False)
             if with_score_factors:
                 score_factor_list = select_single_mlvl(
-                    score_factors, img_id, detach=True)
+                    score_factors, img_id, detach=False)
             else:
                 score_factor_list = [None for _ in range(num_levels)]
 
