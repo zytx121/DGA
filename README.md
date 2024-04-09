@@ -1,6 +1,52 @@
 # DGA
 
-This is the official repository for “DGA”.
+This is the official repository for “DGA: Direction-guided Attack Against Optical Aerial Detection in Camera Shooting Direction Agnostic Scenarios”.
+
+## Requirements
+
+```
+mmcv == 2.0.0rc4
+mmdet == 3.0.0rc6
+mmengine == 0.6.0
+mmrotate == 1.0.0rc1
+```
+
+## Install
+
+- 安装 mmrotate
+- 将 camors 文件夹移动到 `mmrotate/projects/` 目录下即可
+
+
+## Physical Adversarial Attack（物理攻击）
+
+往往通过贴纸、补丁等方式对神经网络进行攻击，补丁与贴纸的颜色并不要求与背景类似，但是贴纸的面积不宜过大，扰动的特点是“范围窄、扰动大”。
+
+Plan of Models:
+
+- :heavy_check_mark: [DPatch](https://github.com/veralauee/DPatch) (AAAIW'2019)
+- :heavy_check_mark: [OBJ](https://gitlab.com/EAVISE/adversarial-yolo) (2019)
+- :heavy_check_mark: [APPA](https://ieeexplore.ieee.org/abstract/document/9965436) (TGRS'2022)
+- :heavy_check_mark: [DGA](https://ieeexplore.ieee.org/abstract/document/) (TGRS'2024)
+- :clock3: [Patch-Noobj](https://www.mdpi.com/2072-4292/13/20/4078) (RS'2021)
+- :clock3: [APA](https://www.mdpi.com/2072-4292/14/21/5298) (RS'2022)
+- :heavy_plus_sign: [APC](https://repository.uantwerpen.be/docman/irua/16bd0a/p177670.pdf)  (2020)
+- :heavy_plus_sign: [AerialAttack](https://openaccess.thecvf.com/content/WACV2022/html/Du_Physical_Adversarial_Attacks_on_an_Aerial_Imagery_Object_Detector_WACV_2022_paper.html?ref=https://githubhelp.com) (WACV'2022)
+- :heavy_plus_sign: [AdvSticker](https://github.com/jinyugy21/Adv-Stickers_RHDE) (TPAMI'2022)
+- :heavy_plus_sign: [SOPP](https://github.com/shighghyujie/newpatch-rl) (TPAMI'2022)
+- :heavy_plus_sign: [Adversarial Defense in Aerial Detection](https://robustart.github.io/long_paper/08.pdf)
+
+训练 OBJ 模型
+
+```bash
+python tools/train.py projects/camors/configs/rtmdet_tiny_1x_dota_obj_airplane.py
+```
+
+测试并生成对抗样本
+
+```bash
+python tools/test.py projects/camors/configs/rtmdet_tiny_1x_dota_obj_airplane.py \
+    /home/zytx121/mmrotate/work_dirs/rtmdet_tiny_3x_dota_airplane/epoch_36.pth
+
 
 ## SJTU-4K Dataset
 
@@ -18,7 +64,26 @@ The dataset is available now.
 
 [jbox](https://jbox.sjtu.edu.cn/l/j1vS3y)(提取码：jlfr)
 
-## Code
+## Reference
 
-The code is coming soon.
+1. [APPA](https://github.com/JiaweiLian/AP-PA)
+2. [mmrotate](https://github.com/open-mmlab/mmrotate)
+3. [mmdetection](https://github.com/open-mmlab/mmdetection)
+
+
+## Citation
+
+If you use DGA method for attacks in your research, please consider citing
+
+```
+@article{zhou2024dga,
+  title={DGA: Direction-guided Attack Against Optical Aerial Detection in Camera Shooting Direction Agnostic Scenarios},
+  author={Zhou, Yue and Sun, Shuqi and Jiang, Xue and Xu, Guozheng and Hu, Fengyuan and Zhang, Ze and Liu, Xingzhao},
+  journal={IEEE Transactions on Geoscience and Remote Sensing},
+  volume={},
+  pages={1--22},
+  year={2024},
+  publisher={IEEE}
+}
+```
 
