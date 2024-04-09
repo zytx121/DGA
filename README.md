@@ -92,6 +92,7 @@ Test and generate adversarial examples
 ```bash
 python tools/test.py projects/camors/configs/rtmdet_tiny_1x_dota_obj_airplane.py \
     /home/zytx121/mmrotate/work_dirs/rtmdet_tiny_3x_dota_airplane/epoch_36.pth
+```
 
 
 ## SJTU-4K Dataset
