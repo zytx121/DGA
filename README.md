@@ -5,9 +5,29 @@ This is the official repository for “DGA: Direction-guided Attack Against Opti
 ## Requirements
 
 ```
+conda create -n dga python=3.8 -y
+conda activate dga
+
+conda install pytorch==1.8.0 torchvision==0.9.0 cudatoolkit=10.2 -c pytorch
+
+pip install -U openmim
+mim install mmengine==0.6.0
+mim install "mmcv==2.0.0rc4" 
+
+cd mmdetection
+pip install -v -e .
+
+cd ../mmyolo
+pip install -v -e .
+
+cd ../mmrotate
+pip install -v -e .
+
+
+mmengine == 0.6.0
 mmcv == 2.0.0rc4
 mmdet == 3.0.0rc6
-mmengine == 0.6.0
+mmyolo == 3.0.0rc6
 mmrotate == 1.0.0rc1
 ```
 
