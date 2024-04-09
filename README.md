@@ -115,7 +115,8 @@ The dataset is available now.
 
 1. [APPA](https://github.com/JiaweiLian/AP-PA)
 2. [mmrotate](https://github.com/open-mmlab/mmrotate)
-3. [mmdetection](https://github.com/open-mmlab/mmdetection)
+3. [mmyolo](https://github.com/open-mmlab/mmyolo)
+4. [mmdetection](https://github.com/open-mmlab/mmdetection)
 
 
 ## Citation
