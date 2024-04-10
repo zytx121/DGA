@@ -62,9 +62,8 @@ Training the detector model:
 python tools/train.py projects/camors/configs/yolov5_s-v61_syncbn_1xb2-100e_sjtu-1024.py
 ```
 
-Training the adversarial patch:
+Training the adversarial patch (Ensure that you are in the `mmrotate` directory):
 
-Ensure that you are in the `mmrotate` directory, then
 ```bash
 python tools/train.py projects/camors/configs/dga/dga_yolov5_s-v61_syncbn_1xb2-5e_sjtu-1024.py
 ```
