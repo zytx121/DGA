@@ -123,3 +123,6 @@ venv.bak/
 
 # Pytorch
 *.pth
+
+# Mac
+.DS_Store
