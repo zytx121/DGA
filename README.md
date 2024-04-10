@@ -56,15 +56,25 @@ Plan of Methods:
 - :heavy_plus_sign: [SOPP](https://github.com/shighghyujie/newpatch-rl) (TPAMI'2022)
 - :heavy_plus_sign: [Adversarial Defense in Aerial Detection](https://robustart.github.io/long_paper/08.pdf)
 
-Training the OBJ model
+Training the detector model:
+
 ```bash
-python tools/train.py projects/camors/configs/rtmdet_tiny_1x_dota_obj_airplane.py
+python tools/train.py projects/camors/configs/yolov5_s-v61_syncbn_1xb2-100e_sjtu-1024.py
 ```
 
-Test and generate adversarial examples
+Training the adversarial patch:
+
 ```bash
-python tools/test.py projects/camors/configs/rtmdet_tiny_1x_dota_obj_airplane.py \
-    /home/zytx121/mmrotate/work_dirs/rtmdet_tiny_3x_dota_airplane/epoch_36.pth
+python tools/train.py projects/camors/configs/dga/dga_yolov5_s-v61_syncbn_1xb2-5e_sjtu-1024.py
+```
+
+Test the adversarial patch:
+
+1. Uncomment `patch_dir` in the `dga_yolov5_s-v61_syncbn_1xb2-5e_sjtu-1024.py`, as it is used to specify the patch.
+2. Run
+```bash
+python tools/test.py projects/camors/configs/dga/dga_yolov5_s-v61_syncbn_1xb2-5e_sjtu-1024.py \
+    work_dirs/yolov5_s-v61_syncbn_1xb2-100e_sjtu-1024/epoch_100.pth
 ```
 
 
