@@ -14,13 +14,14 @@ mmrotate == 1.0.0rc1
 
 ## Install
 
-```
-conda create -n dga python=3.8 -y
-conda activate dga
+```bash
+conda create -n camors python=3.8 -y
+conda activate camors
 
-conda install pytorch==1.8.0 torchvision==0.9.0 cudatoolkit=10.2 -c pytorch
+conda install pytorch==1.12.0 torchvision==0.13.0 cudatoolkit=11.3 -c pytorch
 
-pip install -U openmim
+pip install -U openmim 
+pip install yapf==0.40.1
 mim install mmengine==0.6.0
 mim install "mmcv==2.0.0rc4" 
 
@@ -29,6 +30,7 @@ pip install -v -e .
 
 cd ../mmyolo
 pip install -v -e .
+pip install albumentations
 
 cd ../mmrotate
 pip install -v -e .
