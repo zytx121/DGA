@@ -98,7 +98,7 @@ env_cfg = dict(cudnn_benchmark=True)
 model = dict(
     type='mmdet.APPAYOLODetector',
     use_rbb=True,
-    patch_size=64,
+    patch_size=128,
     printfile=pwd_dir + 'projects/camors/camors/patch/30values.txt',
     # patch_dir=pwd_dir + 'patch_lib/dga_yolov5-s_sjtu-1024/5.npy',
     adv_img_dir=pwd_dir + patch_dir + 'adv_img/',
