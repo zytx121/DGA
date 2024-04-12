@@ -325,23 +325,19 @@ class APPAYOLODetector(OBJYOLODetector):
         p_img_batch = self.patch_applier(batch_inputs, adv_batch_t)
 
         x = self.extract_feat(p_img_batch)
-        results = self.bbox_head.forward(x)
 
         # APPA loss
-        cls_scores = results[0]
-        det_loss = torch.Tensor([]).cuda()
-        for cls_scores_i in cls_scores:
-            batch, num_base_priors, w, h = cls_scores_i.shape
-            cls_scores_i = cls_scores_i.reshape(batch, -1)
-            max_conf, max_conf_idx = torch.max(cls_scores_i, dim=1)
-            det_loss = torch.cat([det_loss, max_conf], dim=0)
-        det_loss = det_loss.max()
-     
+        results = self.bbox_head.predict(
+            x, batch_data_samples, rescale=True)[0]
+        if len(results.scores) != 0:
+            appa_loss = results.scores.mean()
+        else:
+            appa_loss = torch.Tensor([0.]).cuda().requires_grad_(True)
 
         # Add Patch loss
         tv = self.total_variation(patch)
         tv = torch.max(2.5 * tv, torch.tensor(0.1))
         nps = self.nps_calculator(patch)
-        losses = {'tv_loss': tv, 'nps_loss': 0.01 * nps, 'appa_loss': det_loss}
+        losses = {'tv_loss': tv, 'nps_loss': 0.01 * nps, 'appa_loss': appa_loss}
 
         return losses
