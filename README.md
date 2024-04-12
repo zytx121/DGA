@@ -1,6 +1,39 @@
 # DGA
 
-This is the official repository for “DGA: Direction-guided Attack Against Optical Aerial Detection in Camera Shooting Direction Agnostic Scenarios”.
+<p align="center">
+  <h1 align="center">DGA: Direction-guided Attack Against Optical Aerial Detection in Camera Shooting Direction Agnostic Scenarios</h1>
+  <p align="center">
+    <b> TGRS, 2024 </b>
+    <!-- <br /> -->
+<!--     <a href="https://zytx121.github.io/"><strong>Yue Zhou </strong></a>
+    .
+    <a href="https://scholar.google.com/citations?hl=zh-CN&user=PnNAAasAAAAJ"><strong> Litong Feng </strong></a>
+    ·
+    <a href="https://dr.ntu.edu.sg/cris/rp/rp00908/"><strong> Yiping Ke <sup>*</sup></strong></a>
+    . -->
+<!--     <a href="https://yangxue0827.github.io/"><strong> Xue Yang </strong></a>
+    ·
+    <a href="https://scholar.google.com/citations?hl=zh-CN&user=rFv0cHYAAAAJ"><strong> Lin Chen </strong></a>
+    ·
+    <a href="https://sp.sjtu.edu.cn/"><strong> Xue Jiang </strong></a>
+    ·
+    <a href="https://scholar.google.com/citations?hl=zh-CN&user=5GtyVooAAAAJ"><strong> Wayne Zhang </strong></a>
+    . -->
+  </p>
+
+  <p align="center">
+    <a href='https://zytx121.github.io/projects/dga'>
+      <img src='https://img.shields.io/badge/Project-green' alt='Project'>
+    </a>
+    <a href='https://ieeexplore.ieee.org/document/10497142'>
+      <img src='https://img.shields.io/badge/TGRS-PDF-blue?style=flat&logo=IEEE&logoColor=green' alt='TGRS PDF'>
+    </a>
+  </p>
+<br />
+
+
+Patch-based adversarial attacks have increasingly aroused concerns due to their application potential in military and civilian fields. In aerial imagery, numerous targets exhibit inherent directionality, such as vehicles and ships, giving rise to the emergence of oriented object detection tasks; similarly, adversarial patches also exhibit intrinsic orientation due to their lack of perfect symmetry. Existing methods presuppose a static alignment between the adversarial patch's orientation and the camera's coordinate system -- an assumption that is frequently violated in aerial images, whose effectiveness degrades in real-world scenarios. In this paper, we investigate the often-neglected aspect of patch orientation in adversarial attacks and its impact on camouflage effectiveness, particularly when the orientation is not congruent with the target. A new Directional Guided Attack (DGA) framework is proposed for deceiving real-world aerial detectors, which shows robust and adaptable attack performance in camera shooting direction agnostic (CSDA) scenarios. The core idea of DGA is to utilize affine transformations to constrain the relative orientation of the patch to the target and introduce three types of loss to reduce target detection confidence, make the color printable, and smooth the patch color. We introduce a direction-guided evaluation methodology to bridge the gap between patch performance in the digital domain and its actual real-world efficacy. Moreover, we establish a drone-based vehicle detection dataset (SJTU-4K), which labels the orientation of the target, to assess the robustness of patches under various shooting altitudes and views. Extensive proportionally scaled and 1:1 experiments are performed in physical scenarios, demonstrating the superiority and potential of the proposed framework for real-world attacks.
+
 
 ## Requirements
 
