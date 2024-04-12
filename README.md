@@ -1,16 +1,22 @@
-# DGA
-
 <p align="center">
   <h1 align="center">DGA: Direction-guided Attack Against Optical Aerial Detection in Camera Shooting Direction Agnostic Scenarios</h1>
   <p align="center">
     <b> TGRS, 2024 </b>
     <!-- <br /> -->
-<!--     <a href="https://zytx121.github.io/"><strong>Yue Zhou </strong></a>
+    <a href="https://zytx121.github.io/"><strong>Yue Zhou </strong></a>
     .
-    <a href="https://scholar.google.com/citations?hl=zh-CN&user=PnNAAasAAAAJ"><strong> Litong Feng </strong></a>
-    ·
-    <a href="https://dr.ntu.edu.sg/cris/rp/rp00908/"><strong> Yiping Ke <sup>*</sup></strong></a>
-    . -->
+    <strong> Shuqi Sun </strong>
+    .
+    <a href="https://ee.sjtu.edu.cn/FacultyDetail.aspx?id=53&infoid=66&flag=66"><strong> Xue Jiang </strong></a>
+    .
+    <strong> Guozheng Xu </strong>
+    .
+    <strong> Fengyuan Hu </strong>
+    .
+    <strong> Ze Zhang </strong>
+    .
+    <!-- <a href="https://dr.ntu.edu.sg/cris/rp/rp00908/"><strong> Yiping Ke <sup>*</sup></strong></a> -->
+    .
 <!--     <a href="https://yangxue0827.github.io/"><strong> Xue Yang </strong></a>
     ·
     <a href="https://scholar.google.com/citations?hl=zh-CN&user=rFv0cHYAAAAJ"><strong> Lin Chen </strong></a>
@@ -23,7 +29,7 @@
 
   <p align="center">
     <a href='https://zytx121.github.io/projects/dga'>
-      <img src='https://img.shields.io/badge/Project-green' alt='Project'>
+      <img src='https://img.shields.io/badge/Project-Link-green?style=flat&logo=GITHUB&logoColor=black' alt='Project'>
     </a>
     <a href='https://ieeexplore.ieee.org/document/10497142'>
       <img src='https://img.shields.io/badge/TGRS-PDF-blue?style=flat&logo=IEEE&logoColor=green' alt='TGRS PDF'>
