@@ -37,8 +37,8 @@ model_test_cfg = dict(
     multi_label=True,
     # The number of boxes before NMS
     nms_pre=30000,
-    score_thr=0.001,  # Threshold to filter out boxes.
-    nms=dict(type='nms', iou_threshold=0.65),  # NMS type and threshold
+    score_thr=0.4,  # Threshold to filter out boxes.
+    nms=dict(type='nms', iou_threshold=0.45),  # NMS type and threshold
     max_per_img=300)  # Max number of detections of each image
 
 # ========================Possible modified parameters========================
