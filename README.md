@@ -1,5 +1,5 @@
 <p align="center">
-  <h1 align="center">DGA: Direction-guided Attack Against Optical Aerial Detection in Camera Shooting Direction Agnostic Scenarios</h1>
+  <h1 align="center">DGA: Direction-Guided Attack Against Optical Aerial Detection in Camera Shooting Direction-Agnostic Scenarios</h1>
   <p align="center">
     <b> TGRS, 2024 </b>
     <!-- <br /> -->
@@ -139,22 +139,22 @@ If you use this project for attacks in your research, please consider citing
 
 ```
 @article{zhou2024dga,
-  title={DGA: Direction-guided Attack Against Optical Aerial Detection in Camera Shooting Direction Agnostic Scenarios},
+  title={DGA: Direction-Guided Attack Against Optical Aerial Detection in Camera Shooting Direction-Agnostic Scenarios},
   author={Zhou, Yue and Sun, Shuqi and Jiang, Xue and Xu, Guozheng and Hu, Fengyuan and Zhang, Ze and Liu, Xingzhao},
   journal={IEEE Transactions on Geoscience and Remote Sensing},
-  volume={},
+  volume={62},
   pages={1--22},
-  year={2024},
-  publisher={IEEE}
+  year={2024}
 }
+
 
 @article{zhou2023camonet,
   title={CamoNet: A Target Camouflage Network for Remote Sensing Images Based on Adversarial Attack},
   author={Zhou, Yue and Jiang, Wanghan and Jiang, Xue and Chen, Lin and Liu, Xingzhao},
   journal={Remote Sensing},
   volume={15},
-  year={2023},
-  number={21}
+  number={21},
+  year={2023}
 }
 
 ```
